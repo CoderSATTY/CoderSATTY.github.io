@@ -8,7 +8,7 @@ const liveStats = [
   { value: "15+", label: "Projects Shipped", icon: "⬡" },
   { value: "300+", label: "CP Problems Solved", icon: "⬡" },
   { value: "02", label: "Internships", icon: "⬡" },
-  { value: "8+", label: "Certifies Courses", icon: "⬡" },
+  { value: "8+", label: "Certified Courses", icon: "⬡" },
   { value: "3+", label: "Hackathons Won", icon: "⬡" },
   { value: "1220", label: "CF Rating (Pupil)", icon: "⬡" },
 ];

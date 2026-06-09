@@ -315,7 +315,7 @@ export const cpStats = [
   {
     value: 300,
     suffix: "+",
-    label: "LeetCode Problems",
+    label: "CP Problems",
     handle: "@WhileTrueSatty",
     url: "https://leetcode.com/u/WhileTrueSatty/",
   },
@@ -327,10 +327,10 @@ export const cpStats = [
     url: "https://codeforces.com/profile/Satty80085",
   },
   {
-    value: 51,
-    suffix: "",
-    label: "Deep-ML Solves",
-    handle: "@F7UE7evml",
+    value: 50,
+    suffix: "+",
+    label: "Deep-ML Problems",
+    handle: "@Satyam Ashtikar",
     url: "https://www.deep-ml.com/profile/F7UE7evmlJfuJ2ujaFYZgZI5PAJ2",
   },
   {
