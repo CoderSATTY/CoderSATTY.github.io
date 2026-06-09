@@ -21,7 +21,7 @@ export default function Experience() {
             >
               {/* Left meta */}
               <div className="lg:col-span-4 p-8 sm:p-14">
-                <h3 className="font-display text-white text-[42px] sm:text-[58px] lg:text-[66px] leading-none font-medium tracking-tight">
+                <h3 className="font-display text-white text-[48px] sm:text-[64px] lg:text-[72px] leading-none font-medium tracking-tight">
                   {e.company}
                 </h3>
                 <div className="mt-4 font-mono text-[15px] uppercase tracking-[0.2em] text-white/60">
