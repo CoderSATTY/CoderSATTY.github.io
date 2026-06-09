@@ -56,13 +56,13 @@ export default function Achievements() {
               </div>
               <h3 
                 className="font-display text-white font-medium leading-tight"
-                style={{ fontSize: "clamp(32px, 4vw, 56px)" }}
+                style={{ fontSize: "clamp(26px, 3.5vw, 50px)" }}
               >
                 {a.title}
               </h3>
               <p 
                 className="mt-4 text-white/70 leading-[1.65]"
-                style={{ fontSize: "clamp(16px, 2vw, 22px)" }}
+                style={{ fontSize: "clamp(15px, 1.5vw, 18px)" }}
               >
                 {a.sub}
               </p>
@@ -115,10 +115,10 @@ export default function Achievements() {
                 <div>
                   <div 
                     className="font-display text-white font-medium leading-[0.9]"
-                    style={{ fontSize: "clamp(56px, 6vw, 100px)" }}
+                    style={{ fontSize: "clamp(48px, 5.5vw, 90px)" }}
                   >
                     <CountUp value={s.value} trigger={cpIn} />
-                    {s.suffix && <span className="text-white/55 ml-2" style={{ fontSize: "clamp(36px, 4vw, 60px)" }}>{s.suffix}</span>}
+                    {s.suffix && <span className="text-white/55 ml-2" style={{ fontSize: "clamp(30px, 3.5vw, 50px)" }}>{s.suffix}</span>}
                   </div>
                 </div>
                 <div className="mt-12 flex items-center justify-between">

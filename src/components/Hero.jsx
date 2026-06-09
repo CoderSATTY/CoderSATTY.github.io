@@ -41,7 +41,7 @@ function useCountUp(target, trigger) {
     if (!num) { setV(0); return; }
     let raf;
     const start = performance.now();
-    const dur = 1400;
+    const dur = 3500;
     const tick = (now) => {
       const p = Math.min(1, (now - start) / dur);
       const eased = 1 - Math.pow(1 - p, 3);

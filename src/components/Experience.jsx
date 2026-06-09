@@ -21,13 +21,13 @@ export default function Experience() {
             >
               {/* Left meta */}
               <div className="lg:col-span-4 p-8 sm:p-14">
-                <h3 className="font-display text-white text-[48px] sm:text-[64px] lg:text-[72px] leading-none font-medium tracking-tight">
+                <h3 className="font-display text-white text-[42px] sm:text-[58px] lg:text-[66px] leading-none font-medium tracking-tight">
                   {e.company}
                 </h3>
                 <div className="mt-4 font-mono text-[15px] uppercase tracking-[0.2em] text-white/60">
                   {e.period} <span className="mx-2 text-white/30">•</span> {e.location}
                 </div>
-                <div className="mt-2 text-[22px] sm:text-[26px] font-bold text-white tracking-wide">{e.role}</div>
+                <div className="mt-2 text-[18px] sm:text-[22px] font-bold text-white tracking-wide">{e.role}</div>
                 <div className="mt-2 text-[16px] text-white/40">{e.sub}</div>
                 <a
                   href={e.certificate}
@@ -42,7 +42,7 @@ export default function Experience() {
 
               {/* Right content + tags */}
               <div className="lg:col-span-8 p-8 sm:p-14 border-t border-white/10 lg:border-t-0">
-                <div className="text-white/80 text-[24px] sm:text-[26px] leading-[1.8] font-light">
+                <div className="text-white/80 text-[18px] sm:text-[20px] leading-[1.8] font-light">
                   <span dangerouslySetInnerHTML={{ __html: e.description }} />
                 </div>
                 <div className="mt-8 flex flex-wrap gap-3">

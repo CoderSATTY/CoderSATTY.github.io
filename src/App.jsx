@@ -15,7 +15,7 @@ import Marquee from "./components/Marquee";
 
 function App() {
   useEffect(() => {
-    document.title = "Satyam Ashtikar — AI / ML Engineer";
+    document.title = "Satyam's Portfolio";
   }, []);
 
   return (

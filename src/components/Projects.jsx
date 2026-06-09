@@ -48,7 +48,7 @@ export default function Projects() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
-                <h3 className="font-display text-white text-[44px] sm:text-[56px] lg:text-[64px] leading-tight font-medium mt-4">
+                <h3 className="font-display text-white text-[38px] sm:text-[50px] lg:text-[58px] leading-tight font-medium mt-4">
                   {p.title}
                 </h3>
                 <div className="mt-2 text-[15px] sm:text-[18px] uppercase tracking-[0.16em] text-white/45 font-mono">{p.sub}</div>

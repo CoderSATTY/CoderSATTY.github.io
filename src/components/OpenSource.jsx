@@ -28,7 +28,7 @@ export default function OpenSource() {
               </div>
               <h3 
                 className="mt-3 font-display text-white font-medium leading-[0.95]"
-                style={{ fontSize: "clamp(36px, 5vw, 56px)" }}
+                style={{ fontSize: "clamp(30px, 4.5vw, 50px)" }}
               >
                 PyTorch
               </h3>
