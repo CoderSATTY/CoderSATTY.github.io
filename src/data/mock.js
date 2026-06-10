@@ -8,13 +8,15 @@ export const profile = {
     "Building production AI systems — voice agents, RAG pipelines, virtual try-on, and everything in between.",
   roles: [
     "Data Scientist Intern @ Stockhunt",
-    "MLOps Intern @ Insurge AI",
+    "ML & DevOps Intern @ Insurge AI",
     "Head of Machine Learning Domain @ GDG-IITI",
     "Co-Head @ Cynaptics(AI/ML Club)",
     "Open Source Contributor @ PyTorch",
     "Proficient in NLP, CV & Inference Optimization",
     "8+ Certified Courses",
     "AI/ML Enthusiast",
+    "Over 300+ competitive programming problems solved",
+    
   ],
   resumeUrl: "#",
   socials: {

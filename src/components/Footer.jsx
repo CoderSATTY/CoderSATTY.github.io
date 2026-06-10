@@ -23,7 +23,7 @@ export default function Footer() {
           transition={{ duration: 0.8 }}
           className="mt-20 flex flex-row flex-wrap items-center justify-center gap-4"
         >
-          <a href={`mailto:${profile.socials.email}`} target="_blank" rel="noreferrer" className="flex flex-row items-center justify-center gap-3 border border-white/20 hover:border-white hover:bg-white text-white hover:text-black transition-all duration-300 rounded-lg px-6 py-4">
+          <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${profile.socials.email}`} target="_blank" rel="noreferrer" className="flex flex-row items-center justify-center gap-3 border border-white/20 hover:border-white hover:bg-white text-white hover:text-black transition-all duration-300 rounded-lg px-6 py-4">
             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             <span className="font-mono text-[12px] uppercase tracking-wider">Gmail</span>
           </a>
