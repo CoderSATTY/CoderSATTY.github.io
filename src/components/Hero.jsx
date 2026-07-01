@@ -98,11 +98,11 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="hidden md:block absolute z-20 pointer-events-auto"
-          style={{ top: '-50px', right: 'calc(8% - 100px)' }}
+          style={{ top: '-0px', right: 'calc(8% - 10px)' }}
         >
           <div 
             className="rounded-full overflow-hidden border-[4px] border-white shadow-[0_0_40px_rgba(255,255,255,0.1)] group"
-            style={{ width: '560px', height: '560px' }}
+            style={{ width: '400px', height: '400px' }}
           >
             <img 
               src="/imgs/me (Edited).jpeg" 
