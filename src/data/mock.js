@@ -15,7 +15,7 @@ export const profile = {
     "Proficient in NLP, CV & Inference Optimization",
     "8+ Certified Courses",
     "AI/ML Enthusiast",
-    "Over 300+ competitive programming problems solved",
+    "Over 500+ competitive programming problems solved",
     
   ],
   resumeUrl: "#",
@@ -33,7 +33,7 @@ export const stats = [
   { value: "02", label: "Internships" },
   { value: "15+", label: "Projects" },
   { value: "50+", label: "Deep-ML Solves" },
-  { value: "300+", label: "CP Problems" },
+  { value: "500+", label: "CP Problems" },
   { value: "8+", label: "Certified Courses" },
 ];
 
@@ -315,14 +315,14 @@ export const achievements = [
 
 export const cpStats = [
   {
-    value: 300,
+    value: 500,
     suffix: "+",
     label: "CP Problems",
     handle: "@WhileTrueSatty",
     url: "https://leetcode.com/u/WhileTrueSatty/",
   },
   {
-    value: 1220,
+    value: 1385,
     suffix: "",
     label: "Codeforces (Pupil)",
     handle: "@Satty80085",

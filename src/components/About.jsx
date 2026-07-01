@@ -1,19 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { profile } from "../data/mock";
 import { SectionHeader } from "./Stack";
 
+function useCountUp(target, trigger) {
+  const [v, setV] = useState(0);
+  useEffect(() => {
+    if (!trigger) return;
+    const num = parseInt(String(target).replace(/\D/g, ""), 10) || 0;
+    if (!num) { setV(0); return; }
+    let raf;
+    const start = performance.now();
+    const dur = 3500;
+    const tick = (now) => {
+      const p = Math.min(1, (now - start) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      setV(Math.floor(eased * num));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [target, trigger]);
+  return v;
+}
+
 // Live stats fetched statically (can wire to APIs later)
 const liveStats = [
   { value: "15+", label: "Projects Shipped", icon: "⬡" },
-  { value: "300+", label: "CP Problems Solved", icon: "⬡" },
+  { value: "500+", label: "CP Problems Solved", icon: "⬡" },
   { value: "02", label: "Internships", icon: "⬡" },
   { value: "8+", label: "Certified Courses", icon: "⬡" },
   { value: "3+", label: "Hackathons Won", icon: "⬡" },
-  { value: "1220", label: "CF Rating (Pupil)", icon: "⬡" },
+  { value: "1385", label: "CF Rating (Pupil)", icon: "⬡" },
 ];
 
 export default function About() {
+  const [statsIn, setStatsIn] = useState(false);
+
   return (
     <section
       id="about"
@@ -47,13 +70,14 @@ export default function About() {
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
+            onViewportEnter={() => setStatsIn(true)}
             transition={{ duration: 0.8, delay: 0.08, ease: [0.25, 0.1, 0.25, 1] }}
             className="about-panel"
           >
             <div className="panel-kicker">Live Stats</div>
             <div className="about-stat-grid">
               {liveStats.map((s) => (
-                <StatCard key={s.label} s={s} />
+                <StatCard key={s.label} s={s} trigger={statsIn} />
               ))}
             </div>
           </motion.div>
@@ -102,11 +126,16 @@ export default function About() {
   );
 }
 
-function StatCard({ s }) {
+function StatCard({ s, trigger }) {
+  const num = useCountUp(s.value, trigger);
+  const raw = String(s.value);
+  const hasNum = /\d/.test(raw);
+  const suffix = raw.replace(/[\d]/g, "").trim();
+
   return (
     <div className="about-stat-card group">
       <div className="about-stat-value">
-        {s.value}
+        {hasNum ? num : raw}{hasNum && suffix && suffix}
       </div>
       <div className="about-stat-label">
         {s.label}

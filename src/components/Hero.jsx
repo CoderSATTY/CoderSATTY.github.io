@@ -92,6 +92,26 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0a0a] pointer-events-none" />
 
       <motion.div style={{ opacity }} className="relative z-10 container-x w-full pt-16 pb-8 mt-12">
+        {/* User Image - Absolutely positioned so it doesn't affect document flow */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="hidden md:block absolute z-20 pointer-events-auto"
+          style={{ top: '-50px', right: 'calc(8% - 100px)' }}
+        >
+          <div 
+            className="rounded-full overflow-hidden border-[4px] border-white shadow-[0_0_40px_rgba(255,255,255,0.1)] group"
+            style={{ width: '560px', height: '560px' }}
+          >
+            <img 
+              src="/imgs/me (Edited).jpeg" 
+              alt="Satyam Ashtikar" 
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out cursor-pointer"
+            />
+          </div>
+        </motion.div>
+
         {/* Name */}
         <motion.h1
           style={{ y: y1 }}
@@ -101,7 +121,7 @@ export default function Hero() {
           className="font-display text-white leading-[0.92] tracking-tight"
         >
           <span className="block text-[clamp(56px,11vw,180px)] font-medium">SATYAM</span>
-          <span className="block text-[clamp(56px,11vw,180px)] font-medium text-white/70">
+          <span className="block text-[clamp(56px,11vw,180px)] font-medium text-white">
             ASHTIKAR<span className="text-white">.</span>
           </span>
         </motion.h1>
@@ -150,13 +170,13 @@ export default function Hero() {
               <a
                 href="#projects"
                 onClick={(e) => { e.preventDefault(); document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }); }}
-                className="group inline-flex items-center gap-3 font-medium uppercase tracking-wider bg-white text-black hover:bg-white/90 hover:scale-[1.02] transition-all duration-300 rounded-md px-8 py-4 text-[15px]"
+                className="group inline-flex items-center gap-3 font-medium uppercase tracking-wider bg-black text-white border border-white hover:bg-white hover:text-black hover:scale-[1.02] transition-all duration-300 rounded-md px-8 py-4 text-[15px]"
               >
                 View Projects <span className="font-mono">↗</span>
               </a>
               <a
                 href={profile.resumeUrl}
-                className="inline-flex items-center gap-3 font-medium uppercase tracking-wider border-2 border-white/40 text-white/80 hover:border-white hover:bg-white hover:text-black hover:scale-[1.02] transition-all duration-300 rounded-md px-8 py-4 text-[15px]"
+                className="inline-flex items-center gap-3 font-medium uppercase tracking-wider border-2 border-white text-white hover:border-white hover:bg-white hover:text-black hover:scale-[1.02] transition-all duration-300 rounded-md px-8 py-4 text-[15px]"
               >
                 Resume <span className="font-mono">↗</span>
               </a>
@@ -164,35 +184,24 @@ export default function Hero() {
                 href={profile.socials.github}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-3 font-medium uppercase tracking-wider border-2 border-white/40 text-white/80 hover:border-white hover:bg-white hover:text-black hover:scale-[1.02] transition-all duration-300 rounded-md px-8 py-4 text-[15px]"
+                className="inline-flex items-center gap-3 font-medium uppercase tracking-wider border-2 border-white text-white hover:border-white hover:bg-white hover:text-black hover:scale-[1.02] transition-all duration-300 rounded-md px-8 py-4 text-[15px]"
               >
                 GitHub <span className="font-mono">↗</span>
               </a>
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            onViewportEnter={() => setStatsIn(true)}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="lg:col-span-6"
-          >
-            <div className="grid grid-cols-2 sm:grid-cols-5 border-t border-l border-white/10">
-              {stats.map((s, i) => (<Stat key={s.label} s={s} trigger={statsIn} index={i} />))}
-            </div>
-          </motion.div>
+
         </div>
       </motion.div>
 
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-8 left-0 right-0 flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.28em] text-white/45 font-mono z-10"
+        className="absolute bottom-8 left-0 right-0 flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.28em] text-white font-mono z-10"
       >
         <span>Scroll</span>
-        <span className="w-12 h-px bg-white/30" />
+        <span className="w-12 h-px bg-white" />
       </motion.div>
     </section>
   );
@@ -206,12 +215,12 @@ function Stat({ s, trigger, index }) {
   const isColor = index === 0 || index === 2 || index === 4;
 
   return (
-    <div className={`border-b border-r border-white/10 p-5 ${isColor ? 'bg-blue-500/5' : ''}`}>
+    <div className={`border-b border-r border-white p-5 ${isColor ? 'bg-blue-500/5' : ''}`}>
       <div className={`font-display text-[44px] leading-none font-medium ${isColor ? 'text-blue-400' : 'text-white'}`}>
         {hasNum ? num : raw}
-        {hasNum && suffix && <span className={`text-[28px] ${isColor ? 'text-blue-400/70' : 'text-white/55'}`}>{suffix}</span>}
+        {hasNum && suffix && <span className={`text-[28px] ${isColor ? 'text-blue-400/70' : 'text-white'}`}>{suffix}</span>}
       </div>
-      <div className={`mt-4 text-[13px] uppercase tracking-[0.22em] font-mono ${isColor ? 'text-blue-400/60' : 'text-white/45'}`}>{s.label}</div>
+      <div className={`mt-4 text-[13px] uppercase tracking-[0.22em] font-mono ${isColor ? 'text-blue-400/60' : 'text-white'}`}>{s.label}</div>
     </div>
   );
 }
